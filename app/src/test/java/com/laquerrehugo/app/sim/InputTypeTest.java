@@ -1,4 +1,4 @@
-package com.example.a1543702.sim;
+package com.laquerrehugo.app.sim;
 
 import org.junit.Test;
 

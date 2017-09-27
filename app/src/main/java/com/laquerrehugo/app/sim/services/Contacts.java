@@ -1,11 +1,11 @@
-package com.example.a1543702.sim.services;
+package com.laquerrehugo.app.sim.services;
 
 import android.content.Context;
 import android.content.Intent;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 
-import com.example.a1543702.sim.models.Contact;
+import com.laquerrehugo.app.sim.models.Contact;
 
 public class Contacts {
     private final Context Context;

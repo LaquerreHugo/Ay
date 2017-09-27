@@ -1,4 +1,4 @@
-package com.example.a1543702.sim.views;
+package com.laquerrehugo.app.sim.views;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -9,10 +9,10 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.a1543702.sim.R;
-import com.example.a1543702.sim.models.Contact;
-import com.example.a1543702.sim.models.InputType;
-import com.example.a1543702.sim.services.Contacts;
+import com.laquerrehugo.app.sim.R;
+import com.laquerrehugo.app.sim.models.Contact;
+import com.laquerrehugo.app.sim.models.InputType;
+import com.laquerrehugo.app.sim.services.Contacts;
 
 import java.util.List;
 

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Sim</string>
+    <string name="action_settings">Settings</string>
+    <string name="put_submit_text">Put you in!</string>
+    <string name="put_input_hint">Here!</string>
+    <string name="put_input_hint_focus">Yes!</string>
+</resources>

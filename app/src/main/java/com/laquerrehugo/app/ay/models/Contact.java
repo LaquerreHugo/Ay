@@ -1,4 +1,4 @@
-package com.laquerrehugo.app.sim.models;
+package com.laquerrehugo.app.ay.models;
 
 import android.text.TextUtils;
 

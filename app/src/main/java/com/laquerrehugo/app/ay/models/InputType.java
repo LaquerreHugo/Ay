@@ -1,4 +1,4 @@
-package com.laquerrehugo.app.sim.models;
+package com.laquerrehugo.app.ay.models;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;

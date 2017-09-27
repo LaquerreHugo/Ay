@@ -1,0 +1,8 @@
+<resources>
+    <!-- Put -->
+    <dimen name="put_padding_top">56dp</dimen>
+    <dimen name="put_padding_horizontal">24dp</dimen>
+    <dimen name="put_input_margin_vertical">8dp</dimen>
+    <dimen name="put_submit_margin_vertical">24dp</dimen>
+    <dimen name="put_submit_padding">12dp</dimen>
+</resources>

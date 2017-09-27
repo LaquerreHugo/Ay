@@ -1,6 +1,8 @@
 package com.laquerrehugo.app.ay.views;
 
 import android.app.Activity;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
@@ -8,6 +10,7 @@ import android.text.TextUtils;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.laquerrehugo.app.ay.R;
 import com.laquerrehugo.app.ay.models.Contact;
@@ -29,6 +32,9 @@ public class PutActivity extends Activity {
     @BindString(R.string.put_input_hint_focus) String FocusedHint;
 
     //Views
+    @BindView(R.id.title) TextView Title;
+    @BindView(R.id.subtitle) TextView Subtitle;
+
     @BindView(R.id.input) EditText Input;
     @BindView(R.id.input_layout) TextInputLayout InputLayout;
     @BindView(R.id.submit) Button Submit;
@@ -44,13 +50,23 @@ public class PutActivity extends Activity {
 
         bind();
         inject();
-        //init();
+        init();
+    }
+    private void bind() {
+        ButterKnife.bind(this);
     }
     private void inject() {
         Contacts = new Contacts(this); //Todo: Dependency injection
     }
-    private void bind() {
-        ButterKnife.bind(this);
+    private void init() {
+        //Load fonts for the logo
+        AssetManager assets = getApplicationContext().getAssets();
+        Typeface leagueSpartan = Typeface.createFromAsset(assets, "fonts/LeagueSpartan-Bold.otf");
+        Typeface libreBaskerville = Typeface.createFromAsset(assets, "fonts/LibreBaskerville-Italic.ttf");
+
+        //Set the fonts
+        Title.setTypeface(leagueSpartan);
+        Subtitle.setTypeface(libreBaskerville);
     }
 
     //Events

@@ -5,8 +5,11 @@ import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,6 +28,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnEditorAction;
 import butterknife.OnFocusChange;
+import butterknife.OnTextChanged;
 
 public class PutActivity extends Activity {
     //Strings
@@ -37,7 +41,7 @@ public class PutActivity extends Activity {
 
     @BindView(R.id.input) EditText Input;
     @BindView(R.id.input_layout) TextInputLayout InputLayout;
-    @BindView(R.id.submit) Button Submit;
+    @BindView(R.id.submit) FloatingActionButton Submit;
 
     //Services
     Contacts Contacts;
@@ -59,21 +63,21 @@ public class PutActivity extends Activity {
         Contacts = new Contacts(this); //Todo: Dependency injection
     }
     private void init() {
+        //Hide the submit button
+        Submit.setVisibility(View.GONE);
+
         //Load fonts for the logo
         AssetManager assets = getApplicationContext().getAssets();
         Typeface coquette = Typeface.createFromAsset(assets, "fonts/Coquette Bold.ttf");
-        Typeface leagueSpartan = Typeface.createFromAsset(assets, "fonts/LeagueSpartan-Bold.otf");
-        Typeface libreBaskerville = Typeface.createFromAsset(assets, "fonts/LibreBaskerville-Italic.ttf");
 
         //Set the fonts
         Title.setTypeface(coquette);
-        //Subtitle.setTypeface(libreBaskerville);
     }
 
     //Events
     @OnClick(R.id.submit)
     void submit() {
-        if (validate()) {
+        if (validate() && false) {
             String input = getText(Input).trim();
             Contact contact = makeContact(input);
 
@@ -85,11 +89,14 @@ public class PutActivity extends Activity {
     }
 
     @OnFocusChange(R.id.input)
+        //Changes the hint on focus, for encouragements
     void onInputFocusChange(boolean hasFocus) {
         InputLayout.setHint(hasFocus ? FocusedHint : DefaultHint);
     }
 
+
     @OnEditorAction(R.id.input)
+        //Sends a click from the keyboard
     boolean onEditorAction(int action) {
         return action == EditorInfo.IME_ACTION_DONE
                 && Submit.callOnClick();

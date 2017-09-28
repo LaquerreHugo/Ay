@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -24,17 +24,14 @@
             android:hint="@string/put_input_hint" />
     </android.support.design.widget.TextInputLayout>
 
-    <Button
+    <android.support.design.widget.FloatingActionButton
         android:id="@+id/submit"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/put_submit_margin_vertical"
-        android:layout_marginTop="@dimen/put_submit_margin_vertical"
-        android:paddingTop="@dimen/put_submit_margin_vertical"
-        android:paddingBottom="@dimen/put_submit_margin_vertical"
-        android:paddingLeft="36dp"
-        android:paddingRight="36dp"
+        app:rippleColor="@color/ripple_color"
+        android:clickable="true"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_gravity="center_horizontal"
-        android:text="@string/put_submit_text" />
+        android:layout_marginBottom="@dimen/put_submit_margin_vertical"
+        android:layout_marginTop="@dimen/put_submit_margin_vertical" />
 </LinearLayout>

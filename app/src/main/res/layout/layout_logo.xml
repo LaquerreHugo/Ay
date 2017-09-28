@@ -3,24 +3,26 @@
     android:id="@+id/logo"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/logo_margin_bottom">
 
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed"
-        android:text="Add yourself"
+        android:fontFamily="cursive"
+        android:text="@string/logo_title"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="36sp" />
+        android:textColor="?attr/colorAccent"
+        android:textSize="@dimen/logo_title_size" />
 
     <TextView
         android:id="@+id/subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="serif"
-        android:text="in my phone"
+        android:text="@string/logo_subtitle"
         android:textAlignment="center"
-        android:textSize="22sp" />
+        android:textColor="?attr/colorAccent"
+        android:textSize="@dimen/logo_subtitle_size" />
 </LinearLayout>

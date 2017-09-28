@@ -4,4 +4,6 @@
     <string name="put_submit_text">Put you in!</string>
     <string name="put_input_hint">Here!</string>
     <string name="put_input_hint_focus">Yes!</string>
+    <string name="logo_subtitle">in my phone, please</string>
+    <string name="logo_title">Add Yourself</string>
 </resources>

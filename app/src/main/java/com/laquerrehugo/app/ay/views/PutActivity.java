@@ -61,12 +61,13 @@ public class PutActivity extends Activity {
     private void init() {
         //Load fonts for the logo
         AssetManager assets = getApplicationContext().getAssets();
+        Typeface coquette = Typeface.createFromAsset(assets, "fonts/Coquette Bold.ttf");
         Typeface leagueSpartan = Typeface.createFromAsset(assets, "fonts/LeagueSpartan-Bold.otf");
         Typeface libreBaskerville = Typeface.createFromAsset(assets, "fonts/LibreBaskerville-Italic.ttf");
 
         //Set the fonts
-        Title.setTypeface(leagueSpartan);
-        Subtitle.setTypeface(libreBaskerville);
+        Title.setTypeface(coquette);
+        //Subtitle.setTypeface(libreBaskerville);
     }
 
     //Events
@@ -97,9 +98,7 @@ public class PutActivity extends Activity {
     //Helpers
     private boolean validate() {
         boolean isInputEmpty = TextUtils.isEmpty(getText(Input));
-        Input.setError(isInputEmpty
-                ? "You're not nothing!"
-                : null);
+        //Todo: handle empty without errors
 
         return !isInputEmpty;
     }

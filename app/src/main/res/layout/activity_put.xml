@@ -10,9 +10,9 @@
     android:focusableInTouchMode="true">
 
     <!-- App logo -->
-    <include layout="@layout/layout_logo" />
+    <include layout="@layout/layout_logo"/>
 
     <!-- Input field -->
-    <include layout="@layout/content_put" />
+    <include layout="@layout/content_put"/>
 
 </RelativeLayout>

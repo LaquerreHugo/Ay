@@ -27,11 +27,13 @@
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/submit"
         style="@style/Widget.AppCompat.Button.Colored"
-        app:rippleColor="@color/ripple_color"
-        android:clickable="true"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="112dp"
+        android:layout_height="112dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="@dimen/put_submit_margin_vertical"
-        android:layout_marginTop="@dimen/put_submit_margin_vertical" />
+        android:layout_marginTop="@dimen/put_submit_margin_vertical"
+        android:clickable="true"
+        android:src="@drawable/ay_circle_wine"
+        android:scaleType="fitXY"
+        app:rippleColor="@color/ripple_color" />
 </LinearLayout>

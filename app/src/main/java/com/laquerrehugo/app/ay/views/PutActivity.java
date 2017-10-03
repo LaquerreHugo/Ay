@@ -7,11 +7,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
-import android.text.Editable;
 import android.text.TextUtils;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -28,7 +25,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnEditorAction;
 import butterknife.OnFocusChange;
-import butterknife.OnTextChanged;
 
 public class PutActivity extends Activity {
     //Strings
@@ -63,9 +59,6 @@ public class PutActivity extends Activity {
         Contacts = new Contacts(this); //Todo: Dependency injection
     }
     private void init() {
-        //Hide the submit button
-        Submit.setVisibility(View.GONE);
-
         //Load fonts for the logo
         AssetManager assets = getApplicationContext().getAssets();
         Typeface coquette = Typeface.createFromAsset(assets, "fonts/Coquette Bold.ttf");

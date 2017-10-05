@@ -4,5 +4,9 @@
     <dimen name="put_padding_horizontal">24dp</dimen>
     <dimen name="put_input_margin_vertical">8dp</dimen>
     <dimen name="put_submit_margin_vertical">24dp</dimen>
-    <dimen name="put_submit_padding">12dp</dimen>
+    <dimen name="put_submit_padding_vertical">12dp</dimen>
+    <dimen name="logo_title_size">52sp</dimen>
+    <dimen name="logo_subtitle_size">22sp</dimen>
+    <dimen name="logo_margin_bottom">24dp</dimen>
+    <dimen name="put_submit_padding_horizontal">36dp</dimen>
 </resources>

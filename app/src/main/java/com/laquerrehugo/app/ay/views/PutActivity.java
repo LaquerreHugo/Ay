@@ -5,10 +5,10 @@ import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
 import android.text.TextUtils;
 import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -37,7 +37,7 @@ public class PutActivity extends Activity {
 
     @BindView(R.id.input) EditText Input;
     @BindView(R.id.input_layout) TextInputLayout InputLayout;
-    @BindView(R.id.submit) Button Submit;
+    @BindView(R.id.submit) FloatingActionButton Submit;
 
     //Services
     Contacts Contacts;
@@ -61,12 +61,10 @@ public class PutActivity extends Activity {
     private void init() {
         //Load fonts for the logo
         AssetManager assets = getApplicationContext().getAssets();
-        Typeface leagueSpartan = Typeface.createFromAsset(assets, "fonts/LeagueSpartan-Bold.otf");
-        Typeface libreBaskerville = Typeface.createFromAsset(assets, "fonts/LibreBaskerville-Italic.ttf");
+        Typeface coquette = Typeface.createFromAsset(assets, "fonts/Coquette Bold.ttf");
 
         //Set the fonts
-        Title.setTypeface(leagueSpartan);
-        Subtitle.setTypeface(libreBaskerville);
+        Title.setTypeface(coquette);
     }
 
     //Events
@@ -84,11 +82,14 @@ public class PutActivity extends Activity {
     }
 
     @OnFocusChange(R.id.input)
+        //Changes the hint on focus, for encouragements
     void onInputFocusChange(boolean hasFocus) {
         InputLayout.setHint(hasFocus ? FocusedHint : DefaultHint);
     }
 
+
     @OnEditorAction(R.id.input)
+        //Sends a click from the keyboard
     boolean onEditorAction(int action) {
         return action == EditorInfo.IME_ACTION_DONE
                 && Submit.callOnClick();
@@ -97,9 +98,7 @@ public class PutActivity extends Activity {
     //Helpers
     private boolean validate() {
         boolean isInputEmpty = TextUtils.isEmpty(getText(Input));
-        Input.setError(isInputEmpty
-                ? "You're not nothing!"
-                : null);
+        //Todo: handle empty without errors
 
         return !isInputEmpty;
     }

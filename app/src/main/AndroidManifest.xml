@@ -2,13 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.laquerrehugo.app.ay">
 
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+
     <application
         android:allowBackup="true"
         android:label="@string/app_name"
-        android:icon="@mipmap/ic_launcher_shoulder"
-        android:roundIcon="@mipmap/ic_launcher_shoulder_circle"
+        android:icon="@drawable/ay_circle_wine"
+        android:roundIcon="@drawable/ay_circle_wine"
         android:supportsRtl="true"
-        android:theme="@style/Material">
+        android:theme="@style/Material.Red">
         <activity
             android:name="com.laquerrehugo.app.ay.views.PutActivity"
             android:label="@string/app_name">

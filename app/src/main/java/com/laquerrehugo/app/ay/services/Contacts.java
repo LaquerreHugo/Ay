@@ -24,7 +24,7 @@ public class Contacts {
             intent.putExtra(ContactsContract.Intents.Insert.NAME, contact.getName());
         if (contact.hasPhone())
             intent.putExtra(ContactsContract.Intents.Insert.PHONE, contact.getPhone());
-        if (contact.hasName())
+        if (contact.hasEmail())
             intent.putExtra(ContactsContract.Intents.Insert.EMAIL, contact.getEmail());
 
         Context.startActivity(intent);

@@ -1,7 +1,14 @@
 <resources>
-    <string name="app_name">Sim</string>
-    <string name="action_settings">Settings</string>
-    <string name="put_submit_text">Put you in!</string>
-    <string name="put_input_hint">Here!</string>
+    <!-- App -->
+    <string name="app_name" translatable="false">Ay</string>
+
+    <!-- Logo -->
+    <string name="logo_subtitle">in my phone, please</string>
+    <string name="logo_title">Add Yourself</string>
+
+    <!-- Put -->
+    <string name="put_submit_text">Ay!</string>
+
+    <string name="put_input_hint">Here</string>
     <string name="put_input_hint_focus">Yes!</string>
 </resources>

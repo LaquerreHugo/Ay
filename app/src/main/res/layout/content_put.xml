@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/logo"
+    android:layout_marginTop="50dp">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/put_input_margin_vertical"
+        android:layout_marginBottom="@dimen/put_input_margin_vertical">
+
+        <EditText
+            android:id="@+id/input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:focusable="true"
+            android:imeOptions="actionDone"
+            android:inputType="textCapWords|textEmailAddress"
+            android:hint="@string/put_input_hint" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/submit"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="112dp"
+        android:layout_height="112dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/put_submit_margin_vertical"
+        android:layout_marginTop="@dimen/put_submit_margin_vertical"
+        android:clickable="true"
+        android:src="@drawable/ay_circle_wine"
+        android:scaleType="fitXY"
+        app:rippleColor="@color/ripple_color" />
+</LinearLayout>

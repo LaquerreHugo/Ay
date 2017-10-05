@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- colour scheme  -->
-    <color name="warmBlack">#073B4C</color>
-    <color name="strawberry">#CB0000</color>
+    <!-- clean scheme  -->
+    <color name="warmBlack">#073b4c</color>
+    <color name="strawberry">#cb0000</color>
+    
+    <color name="desire">#e63946</color>
+    <color name="honeydew">#F1FAEE</color>
+    <color name="light_blue">#a8dadc</color>
+    <color name="queen_blue">#457B9D</color>
+    <color name="space_cadet">#1d3557</color>
+
+    <color name="dark_liver">#50514F</color>
+    <color name="lapis_lazuli">#247BA0</color>
+    <color name="green_sheen">#70C1B3</color>
+    
+    <color name="lipstick">#c70039</color>
+    <color name="wine">#900c3f</color>
 </resources>

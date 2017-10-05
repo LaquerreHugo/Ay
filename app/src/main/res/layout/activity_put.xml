@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:paddingTop="@dimen/put_padding_top"
     android:paddingLeft="@dimen/put_padding_horizontal"
     android:paddingRight="@dimen/put_padding_horizontal"
@@ -11,34 +10,9 @@
     android:focusableInTouchMode="true">
 
     <!-- App logo -->
-    <include layout="@layout/layout_logo" />
+    <include layout="@layout/layout_logo"/>
 
     <!-- Input field -->
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/input_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/put_input_margin_vertical"
-        android:layout_marginBottom="@dimen/put_input_margin_vertical">
+    <include layout="@layout/content_put"/>
 
-        <EditText
-            android:id="@+id/input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:maxLines="1"
-            android:focusable="true"
-            android:imeOptions="actionDone"
-            android:inputType="textCapWords|textEmailAddress"
-            android:hint="@string/put_input_hint" />
-    </android.support.design.widget.TextInputLayout>
-
-    <!-- Submit button -->
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/put_submit_margin_vertical"
-        android:layout_marginBottom="@dimen/put_submit_margin_vertical"
-        android:padding="@dimen/put_submit_padding"
-        android:text="@string/put_submit_text" />
-</LinearLayout>
+</RelativeLayout>

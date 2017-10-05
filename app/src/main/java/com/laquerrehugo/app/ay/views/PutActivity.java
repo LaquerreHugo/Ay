@@ -70,7 +70,7 @@ public class PutActivity extends Activity {
     //Events
     @OnClick(R.id.submit)
     void submit() {
-        if (validate() && false) {
+        if (validate()) {
             String input = getText(Input).trim();
             Contact contact = makeContact(input);
 

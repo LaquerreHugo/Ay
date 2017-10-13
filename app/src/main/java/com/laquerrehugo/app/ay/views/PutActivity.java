@@ -1,6 +1,7 @@
 package com.laquerrehugo.app.ay.views;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -76,6 +77,8 @@ public class PutActivity extends Activity {
 
             if (contact != null) {
                 Contacts.add(contact);
+
+                thank();
                 finish();
             }
         }
@@ -118,6 +121,11 @@ public class PutActivity extends Activity {
             contact.setName(input);
 
         return contact;
+    }
+
+    private void thank() {
+        Intent intent = new Intent(this, ThanksActivity.class);
+        startActivity(intent);
     }
 
     String getText(EditText view) { return view.getText().toString(); }

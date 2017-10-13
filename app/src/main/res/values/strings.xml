@@ -8,7 +8,10 @@
 
     <!-- Put -->
     <string name="put_submit_text">Ay!</string>
-
     <string name="put_input_hint">Here</string>
     <string name="put_input_hint_focus">Yes!</string>
+
+    <!-- Thanks -->
+    <string name="thanks">Thanks!</string>
+    <string name="thanks_subtitle">Give me back my phone now</string>
 </resources>

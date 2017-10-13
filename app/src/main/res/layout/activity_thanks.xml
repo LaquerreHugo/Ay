@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_padding_top"
+    android:paddingLeft="@dimen/activity_padding_horizontal"
+    android:paddingRight="@dimen/activity_padding_horizontal"
+    tools:context="com.laquerrehugo.app.ay.views.ThanksActivity">
+
+    <include layout="@layout/header_thanks"/>
+
+</android.support.constraint.ConstraintLayout>

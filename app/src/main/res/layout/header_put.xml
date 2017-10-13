@@ -10,19 +10,13 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="cursive"
-        android:text="@string/logo_title"
-        android:textAlignment="center"
-        android:textColor="?attr/colorAccent"
-        android:textSize="@dimen/logo_title_size" />
+        style="@style/Title"
+        android:text="@string/logo_title" />
 
     <TextView
         android:id="@+id/subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="@string/logo_subtitle"
-        android:textAlignment="center"
-        android:textColor="?attr/colorAccent"
-        android:textSize="@dimen/logo_subtitle_size" />
+        style="@style/Subtitle"
+        android:text="@string/logo_subtitle" />
 </LinearLayout>

@@ -1,8 +1,6 @@
 package com.laquerrehugo.app.ay.services;
 
 import android.content.Context;
-import android.content.Intent;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 
 import com.laquerrehugo.app.ay.models.Contact;
@@ -17,16 +15,6 @@ public class Contacts {
 
     //Methods
     public void add(@NonNull final Contact contact) {
-        Intent intent = new Intent(Intent.ACTION_INSERT);
-        intent.setType(ContactsContract.Contacts.CONTENT_TYPE);
-
-        if (contact.hasName())
-            intent.putExtra(ContactsContract.Intents.Insert.NAME, contact.getName());
-        if (contact.hasPhone())
-            intent.putExtra(ContactsContract.Intents.Insert.PHONE, contact.getPhone());
-        if (contact.hasEmail())
-            intent.putExtra(ContactsContract.Intents.Insert.EMAIL, contact.getEmail());
-
-        Context.startActivity(intent);
+        //Todo: add contact in the background
     }
 }

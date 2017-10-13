@@ -2,17 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.laquerrehugo.app.ay">
 
-    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
         android:icon="@drawable/ay_circle_wine"
+        android:label="@string/app_name"
         android:roundIcon="@drawable/ay_circle_wine"
         android:supportsRtl="true"
         android:theme="@style/Material.Red">
         <activity
-            android:name="com.laquerrehugo.app.ay.views.PutActivity"
+            android:name=".views.PutActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +20,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".views.ThanksActivity" />
     </application>
 
 </manifest>

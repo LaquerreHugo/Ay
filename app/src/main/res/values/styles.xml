@@ -4,11 +4,29 @@
         <item name="colorPrimaryDark">@color/warmBlack</item>
     </style>
 
+    <!-- Main theme -->
     <style name="Material.Red" parent="Theme.AppCompat.NoActionBar">
         <item name="colorPrimary">@color/lipstick</item>
         <item name="colorAccent">?android:attr/colorForeground</item>
         <item name="android:colorBackground">@color/lipstick</item>
         <item name="colorPrimaryDark">@color/wine</item>
-        <item name="android:textColorPrimaryInverse">@color/primary_text_material_light</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_material_light </item>
+    </style>
+
+    <!-- Common styles -->
+    <style name="Title">
+        <item name="android:textSize">@dimen/title_size</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">?attr/colorAccent</item>
+        <item name="android:fontFamily">cursive</item>
+    </style>
+
+    <style name="Subtitle">
+        <item name="android:textSize">@dimen/subtitle_size</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:fontFamily">serif</item>
+        <item name="android:textColor">?attr/colorAccent</item>
+        <item name="android:layout_marginLeft">@dimen/subtitle_margin_horizontal</item>
+        <item name="android:layout_marginRight">@dimen/subtitle_margin_horizontal</item>
     </style>
 </resources>

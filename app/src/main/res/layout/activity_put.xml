@@ -3,14 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/put_padding_top"
-    android:paddingLeft="@dimen/put_padding_horizontal"
-    android:paddingRight="@dimen/put_padding_horizontal"
+    android:paddingTop="@dimen/activity_padding_top"
+    android:paddingLeft="@dimen/activity_padding_horizontal"
+    android:paddingRight="@dimen/activity_padding_horizontal"
     android:focusable="true"
     android:focusableInTouchMode="true">
 
     <!-- App logo -->
-    <include layout="@layout/layout_logo"/>
+    <include layout="@layout/header_put"/>
 
     <!-- Input field -->
     <include layout="@layout/content_put"/>

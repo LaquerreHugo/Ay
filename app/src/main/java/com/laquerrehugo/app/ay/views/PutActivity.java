@@ -106,7 +106,7 @@ public class PutActivity extends Activity {
             case Email:
                 contact.setEmail(input.getValue());
                 break;
-            case Phone:
+            case PhoneNumber:
                 contact.setPhone(input.getValue());
                 break;
             case Name:

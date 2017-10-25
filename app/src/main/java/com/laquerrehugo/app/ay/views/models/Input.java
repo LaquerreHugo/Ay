@@ -1,10 +1,13 @@
 package com.laquerrehugo.app.ay.views.models;
 
 import android.support.annotation.NonNull;
-import android.text.TextUtils;
 import android.util.Patterns;
 
 import com.laquerrehugo.app.ay.exceptions.NoTypeException;
+
+import org.apache.commons.validator.routines.EmailValidator;
+
+import java.util.regex.Pattern;
 
 public class Input {
     //Properties
@@ -32,40 +35,30 @@ public class Input {
 
     //Methods
     public boolean is(Type type) {
-        return this.getType() == Type.Unknown;
+        return type.matches(getValue());
     }
 
     //Enums
     public enum Type {
         //Types
-        Email(new Matcher<String>() {
+        Email(new Matcher() {
             @Override
             public boolean matches(String input) {
-                return !TextUtils.isEmpty(input)
-                        && Patterns.EMAIL_ADDRESS.matcher(input).matches();
+                return  input != null
+                        && !input.isEmpty()
+                        && EmailValidator.getInstance().isValid(input);
             }
         }),
-        Phone(new Matcher<String>() {
+        PhoneNumber(new Matcher() {
             @Override
             public boolean matches(String input) {
-                return !TextUtils.isEmpty(input)
+                return  input != null
+                        && !input.isEmpty()
                         && Patterns.PHONE.matcher(input).matches();
             }
         }),
-        Name(new Matcher<String>() {
-            @Override
-            public boolean matches(String input) {
-                if (TextUtils.isEmpty(input))
-                    return false;
-
-                for (char c : input.toCharArray())
-                    if (!Character.isLetter(c))
-                        return false;
-
-                return true;
-            }
-        }),
-        Unknown(new Matcher<String>() {
+        Name(new RegexMatcher("^\\p{L}+[\\p{L}\\p{Z}\\p{P}]{0,}")),
+        Unknown(new Matcher() {
             @Override
             public boolean matches(String input) {
                 return true;
@@ -73,15 +66,32 @@ public class Input {
         });
 
         //Classes
-        private interface Matcher<T> {
+        private interface Matcher {
             boolean matches(String input);
+        }
+        private static class RegexMatcher implements Matcher {
+            //Properties
+            private String Regex;
+
+            //Initialize
+            RegexMatcher(String regex) {
+                this.Regex = regex;
+            }
+
+            //Methods
+            @Override
+            public boolean matches(String input) {
+                return input != null
+                        && !input.isEmpty()
+                        && Pattern.matches(Regex, input);
+            }
         }
 
         //Properties
-        private Matcher<String> matcher;
+        private Matcher matcher;
 
         //Initialize
-        Type(Matcher<String> matcher) {
+        Type(Matcher matcher) {
             this.matcher = matcher;
         }
 

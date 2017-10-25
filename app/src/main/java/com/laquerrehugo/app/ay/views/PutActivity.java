@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.laquerrehugo.app.ay.R;
+import com.laquerrehugo.app.ay.exceptions.InsertContactException;
 import com.laquerrehugo.app.ay.models.Contact;
 import com.laquerrehugo.app.ay.services.Contacts;
 import com.laquerrehugo.app.ay.views.models.Input;
@@ -77,7 +78,12 @@ public class PutActivity extends Activity {
             Contact contact = new Contact();
             fillContact(contact, input);
 
-            Contacts.add(contact);
+            try {
+                Contacts.insert(contact);
+                thank();
+            } catch (InsertContactException ex) {
+                apologize();
+            }
         }
     }
 
@@ -100,6 +106,10 @@ public class PutActivity extends Activity {
         Intent intent = new Intent(this, ThanksActivity.class);
         startActivity(intent);
     }
+    private void apologize() {
+        Toast.makeText(this, "Sorry! couldn't add you in my contacts :(", Toast.LENGTH_SHORT).show();
+        //Todo: handle insert exception
+    }
 
     private void fillContact(Contact contact, Input input) {
         switch (input.getType()) {
@@ -111,6 +121,7 @@ public class PutActivity extends Activity {
                 break;
             case Name:
                 contact.setName(input.getValue());
+                break;
         }
     }
 

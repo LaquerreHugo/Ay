@@ -22,7 +22,7 @@ public class Input {
             return type;
 
         for (Type type : Type.values())
-            if (this.is(type))
+            if (type.matches(getValue()))
                 return this.type = type;
 
         throw new NoTypeException();
@@ -35,7 +35,7 @@ public class Input {
 
     //Methods
     public boolean is(Type type) {
-        return type.matches(getValue());
+        return getType() == type;
     }
 
     //Enums

@@ -5,20 +5,18 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputLayout;
-import android.text.TextUtils;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.laquerrehugo.app.ay.R;
+import com.laquerrehugo.app.ay.exceptions.InsertContactException;
 import com.laquerrehugo.app.ay.models.Contact;
-import com.laquerrehugo.app.ay.models.InputType;
 import com.laquerrehugo.app.ay.services.Contacts;
-
-import java.util.List;
+import com.laquerrehugo.app.ay.views.models.Input;
 
 import butterknife.BindString;
 import butterknife.BindView;
@@ -36,7 +34,7 @@ public class PutActivity extends Activity {
     @BindView(R.id.title) TextView Title;
     @BindView(R.id.subtitle) TextView Subtitle;
 
-    @BindView(R.id.input) EditText Input;
+    @BindView(R.id.input) EditText InputField;
     @BindView(R.id.input_layout) TextInputLayout InputLayout;
     @BindView(R.id.submit) FloatingActionButton Submit;
 
@@ -71,15 +69,20 @@ public class PutActivity extends Activity {
     //Events
     @OnClick(R.id.submit)
     void submit() {
-        if (validate()) {
-            String input = getText(Input).trim();
-            Contact contact = makeContact(input);
+        Input input = new Input(getText(InputField));
 
-            if (contact != null) {
-                Contacts.add(contact);
+        if (input.is(Input.Type.Unknown))
+            //Todo: handle gibberish input
+            Toast.makeText(this, "What is that??", Toast.LENGTH_SHORT).show();
+        else {
+            Contact contact = new Contact();
+            fillContact(contact, input);
 
+            try {
+                Contacts.insert(contact);
                 thank();
-                finish();
+            } catch (InsertContactException ex) {
+                apologize();
             }
         }
     }
@@ -99,33 +102,27 @@ public class PutActivity extends Activity {
     }
 
     //Helpers
-    private boolean validate() {
-        boolean isInputEmpty = TextUtils.isEmpty(getText(Input));
-        //Todo: handle empty without errors
-
-        return !isInputEmpty;
-    }
-
-    @Nullable
-    private Contact makeContact(String input) {
-        List<InputType> inputTypes = InputType.from(input);
-        if (inputTypes.isEmpty())
-            return null;
-
-        Contact contact = new Contact();
-        if (inputTypes.contains(InputType.Email))
-            contact.setEmail(input);
-        else if (inputTypes.contains(InputType.Phone))
-            contact.setPhone(input);
-        else if (inputTypes.contains(InputType.Name))
-            contact.setName(input);
-
-        return contact;
-    }
-
     private void thank() {
         Intent intent = new Intent(this, ThanksActivity.class);
         startActivity(intent);
+    }
+    private void apologize() {
+        Toast.makeText(this, "Sorry! couldn't add you in my contacts :(", Toast.LENGTH_SHORT).show();
+        //Todo: handle insert exception
+    }
+
+    private void fillContact(Contact contact, Input input) {
+        switch (input.getType()) {
+            case Email:
+                contact.setEmail(input.getValue());
+                break;
+            case PhoneNumber:
+                contact.setPhone(input.getValue());
+                break;
+            case Name:
+                contact.setName(input.getValue());
+                break;
+        }
     }
 
     String getText(EditText view) { return view.getText().toString(); }
